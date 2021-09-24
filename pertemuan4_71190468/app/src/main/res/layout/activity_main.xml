@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/teal_700"
+    android:background="@drawable/wallpaper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="25dp"
@@ -12,19 +12,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="cursive"
         android:text="Aplikasi Selamat Datang"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+        android:textColor="@color/ijo_lagi"
+        android:textSize="48sp"
+        android:layout_marginBottom="100dp"/>
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="@color/white"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -36,7 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:background="@color/white"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -54,6 +52,7 @@
             android:layout_weight="1"
             android:layout_marginRight="15dp"
             android:text="LOGIN"
+            android:backgroundTint="@color/dark_green"
             android:textColor="@color/white"/>
 
         <Button
@@ -62,14 +61,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="REGISTER"
+            android:backgroundTint="@color/dark_green"
             android:textColor="@color/white"/>
 
 
     </LinearLayout>
-
-
-
-
 
 
 </LinearLayout>
