@@ -17,14 +17,20 @@ class LoginActivity : AppCompatActivity() {
         val btnlogin = findViewById<Button>(R.id.btnlogin)
 
         btnlogin.setOnClickListener {
-            if (password.text.toString().equals("12345")){
-                toast("Login Berhasil")
-                val intent = Intent(this,HomeActivity:: class.java)
-                intent.putExtra("username",username.text.toString())
-                startActivity(intent)
+            if (username.text.toString().equals("") and password.text.toString().equals("")){
+                username.setError("username kosong")
+                password.setError("password kosong")
             }
-            else{
-               toast("Login Gagal")
+            else {
+                if (password.text.toString().equals("12345")){
+                    toast("Login Berhasil")
+                    val intent = Intent(this,HomeActivity:: class.java)
+                    intent.putExtra("username",username.text.toString())
+                    startActivity(intent)
+                }
+                else{
+                    toast("Login Gagal")
+                }
             }
         }
     }
