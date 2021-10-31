@@ -1,0 +1,11 @@
+package com.example.pertemuan9_71190468
+
+import android.content.res.Configuration
+import androidx.appcompat.app.AppCompatActivity
+
+class Favorite: AppCompatActivity(R.layout.favorite_layout) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        setContentView(R.layout.favorite_layout)
+    }
+}
