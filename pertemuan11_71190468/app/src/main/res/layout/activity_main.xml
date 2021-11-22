@@ -38,6 +38,7 @@
         android:id="@+id/btnSimpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:text="Simpan" />
 
     <Button
@@ -47,8 +48,10 @@
         android:text="Cari" />
 
 
-
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sort IPK by: "/>
     <RadioGroup
         android:id="@+id/mainButton"
         android:layout_width="match_parent"
@@ -72,14 +75,8 @@
         android:id="@+id/txtOutput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:hint="Hasil Pencarian" />
-
-
-
-
-
-
+        android:hint="Hasil Pencarian"
+        android:textSize="24sp" />
 
 
 </LinearLayout>

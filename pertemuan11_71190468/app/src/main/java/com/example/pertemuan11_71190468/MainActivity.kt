@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         val btnDesc = findViewById<RadioButton>(R.id.btnDesc)
         val mainButton = findViewById<RadioGroup>(R.id.mainButton)
 
-        var valueButton = ""
+
+        var valueButtonSort = ""
 
         btnSimpan.setOnClickListener {
             val mahasiswa = Mahasiswa(nama.text.toString(),nim.text.toString(),ipk.text.toString().toDouble())
@@ -42,16 +43,16 @@ class MainActivity : AppCompatActivity() {
 
         mainButton.setOnCheckedChangeListener {
             group, checkedId ->
-                valueButton = when(checkedId){
+                valueButtonSort = when(checkedId){
                     R.id.btnAsc -> "Ascending"
                     R.id.btnDesc -> "Descending"
                     else -> ""
                 }
         }
 
-        btnCari.setOnClickListener {
 
-            if(valueButton.equals("Ascending")){
+        btnCari.setOnClickListener {
+            if(valueButtonSort.equals("Ascending")){
                 firestore?.collection("mahasiswa")?.whereEqualTo("nama",nama.text.toString())?.orderBy("ipk", Query.Direction.ASCENDING)?.get()!!
                     .addOnSuccessListener { docs ->
                         var output = ""
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                         btnAsc.isChecked = false
                     }
             }
-            else if(valueButton.equals("Descending")){
+            else if(valueButtonSort.equals("Descending")){
                 firestore?.collection("mahasiswa")?.whereEqualTo("nama",nama.text.toString())?.orderBy("ipk", Query.Direction.DESCENDING)?.get()!!
                     .addOnSuccessListener { docs ->
                         var output = ""
@@ -76,19 +77,45 @@ class MainActivity : AppCompatActivity() {
                     }
             }
             else{
-                firestore?.collection("mahasiswa")?.whereEqualTo("nama",nama.text.toString())?.get()!!
-                    .addOnSuccessListener { docs ->
-                        var output = ""
-                        for(doc in docs){
-                            output += "\n Nama: ${doc["nama"]}\n NIM: ${doc["nim"]}\n IPK: ${doc["ipk"]}\n"
+
+                if(!nama.text.toString().equals("")){
+                    firestore?.collection("mahasiswa")?.whereEqualTo("nama",nama.text.toString())?.get()!!
+                        .addOnSuccessListener { docs ->
+                            var output = ""
+                            for(doc in docs){
+                                output += "\n Nama: ${doc["nama"]}\n NIM: ${doc["nim"]}\n IPK: ${doc["ipk"]}\n"
+
+                            }
+                            txtOutput.setText(output)
 
                         }
-                        txtOutput.setText(output)
+                }
+                else if(!nim.text.toString().equals("")){
+                    firestore?.collection("mahasiswa")?.whereEqualTo("nim", nim.text.toString())?.get()!!
+                        .addOnSuccessListener {
+                                docs ->
+                            var output = ""
+                            for(doc in docs){
+                                output += "\n Nama: ${doc["nama"]}\n NIM: ${doc["nim"]}\n IPK: ${doc["ipk"]}\n"
+                            }
+
+                            txtOutput.setText(output)
+
+                        }
+                }
+
+                else if(!ipk.text.toString().equals("")){
+                    firestore?.collection("mahasiswa")?.whereEqualTo("ipk", ipk.text.toString().toDouble())?.get()!!
+                        .addOnSuccessListener {
+                                docs ->
+                            var output = ""
+                            for(doc in docs){
+                                output += "\n Nama: ${doc["nama"]}\n NIM: ${doc["nim"]}\n IPK: ${doc["ipk"].toString()}\n"
+                            }
+                            txtOutput.setText(output)
+                        }
                     }
+                }
             }
-
-
-
         }
-    }
 }
