@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#21293D"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:background="#21293D"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Page"
+        android:textSize="36sp"
+        android:padding="20dp"
+        android:textColor="@color/white_smoke"
+        android:textAlignment="center"
+        android:layout_gravity="center">
+
+
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_smoke"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:textColorHint="@color/black">
+
+    </EditText>
+
+
+
+    <EditText
+
+        android:id="@+id/edtPassword"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:background="@color/white_smoke"
+        android:textColor="@color/black"
+        android:hint="Password"
+        android:textColorHint="@color/black"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+
+    </EditText>
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:backgroundTint="@color/orange"
+        android:textColor="@color/black"
+        android:layout_gravity="center">
+
+
+    </Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:text="Sudah punya akun? "
+            android:textColor="@color/white_smoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:backgroundTint="#21293D"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textStyle="bold"
+            android:textColor="@color/white_smoke"
+            android:textSize="11sp" />
+
+
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

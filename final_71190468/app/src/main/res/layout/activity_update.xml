@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Data Film"
+        android:textSize="30sp"
+        android:layout_margin="20dp"
+        android:textColor="@color/orange"
+        android:layout_gravity="center"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/updateTitle"
+        android:layout_margin="5dp"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/updateRating"
+        android:layout_margin="5dp"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rating">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/updateYear"
+        android:layout_margin="5dp"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/updateGenre"
+        android:layout_margin="5dp"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Genre">
+
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Language"
+        android:id="@+id/updatelanguage">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/updateSinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:gravity="start"
+        android:inputType="textPersonName"
+        android:layout_margin="5dp"
+        android:hint="Sinopsis">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/green"
+        android:layout_gravity="center"
+        android:text="Save">
+
+    </Button>
+
+
+
+</LinearLayout>

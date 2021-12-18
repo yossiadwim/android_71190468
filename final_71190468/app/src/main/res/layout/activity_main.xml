@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#21293D"
+    tools:context=".MainActivity">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/toolbar_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            android:background="@color/white">
+
+                        </EditText>
+
+                        <ImageButton
+                            android:id="@+id/btnSearch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_search" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    android:text="">
+
+                </TextView>
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcyFilm"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="30dp"
+                            android:scrollbars="vertical"
+                            tools:listitem="@layout/item_recycler_view">
+
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                </androidx.core.widget.NestedScrollView>
+
+
+
+
+        </LinearLayout>
+
+</LinearLayout>
